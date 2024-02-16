@@ -5,7 +5,7 @@
   <meta name="keywords" content="export, business, material, food, harvest, ekspor, bisnis, hasil bumi, makanan, produk indonesia">
   <meta name="description" content="An export company that serves requests for Indonesian goods, products, agricultural products, food and spices outside the country">
   <meta name="author" content="Galih">
-  <meta http-equiv="refresh" content="30">
+ 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
