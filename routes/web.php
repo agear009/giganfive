@@ -7,10 +7,10 @@ use App\Http\Controllers\DashboardIndexController;
 use App\Http\Controllers\LoginuserController;
 use Illuminate\Support\Facades\Auth;
 
-use App\Models\country;
-use App\Models\category;
-use App\Models\categoryproduct;
-use App\Models\product;
+use App\Models\Country;
+use App\Models\Category;
+use App\Models\CategoryProduct;
+use App\Models\Product;
 use App\Models\About;
 use App\Models\Post;
 
@@ -19,10 +19,10 @@ use App\Models\Post;
 Route::get('/', function () {
             $modelPost = new Post;
             $Posts=$modelPost->getListPost();
-            $Countries=country::all();
-            $Categoryproducts = categoryproduct::all();
-            $Categorys = category::all();
-            $Products = product::all();
+            $Countries=Country::all();
+            $Categoryproducts = CategoryProduct::all();
+            $Categorys = Category::all();
+            $Products = Product::all();
             $Abouts = About::all();
             return view('index.index',["title"=>"home","active"=>"index"],compact('Categoryproducts','Products','Abouts','Categorys','Posts'));
         })->name('login')->middleware('guest');
