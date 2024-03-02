@@ -65,7 +65,7 @@ class ShoppingCartController extends Controller
             'status' =>$request->status
         ]);
         //redirect to index
-        return Redirect()->route('index.Dashboard',["title"=>"My Order",'active'=>'Myorder'])->with(['success'=>'cart added successfully!']);
+        return Redirect()->route('index.dashboard',["title"=>"My Order",'active'=>'Myorder'])->with(['success'=>'cart added successfully!']);
     }
 
     //function show
@@ -79,7 +79,7 @@ class ShoppingCartController extends Controller
         $modelgetListgetListshoppingCartById = new shoppingCart;
         $ShoppingCart=$modelgetListgetListshoppingCartById->getListshoppingCartById($id);
 
-        return view('ShoppingCarts.show',["title"=>"Show",'active'=>'ShoppingCart'],compact('ShoppingCart'));
+        return view('ShoppingCarts.Show',["title"=>"Show",'active'=>'ShoppingCart'],compact('ShoppingCart'));
     }
 
     public function edit(string $id):View
@@ -89,7 +89,7 @@ class ShoppingCartController extends Controller
         $modelgetListsthreeTablesById = new shoppingCart;
         $ShoppingCart=$modelgetListsthreeTablesById->getListsthreeTablesById($id);
        // dd($ShoppingCart);
-        return view('ShoppingCarts.edit',["title"=>"Edit",'active'=>'ShoppingCart'], compact('ShoppingCart'));
+        return view('ShoppingCarts.Edit',["title"=>"Edit",'active'=>'ShoppingCart'], compact('ShoppingCart'));
 
     }
 
@@ -112,7 +112,7 @@ class ShoppingCartController extends Controller
             ]);
 
 
-        return redirect()->route('shoppingcarts.index',["title"=>"ShoppingCart",'active'=>'ShoppingCart'])->with(['success'=>'data berhasil diubah!']);
+        return redirect()->route('shoppingcarts.ndex',["title"=>"ShoppingCart",'active'=>'ShoppingCart'])->with(['success'=>'data berhasil diubah!']);
 
     }
 

@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers;
 //import model country
-use App\Models\shippingCost;
+use App\Models\Shippingcost;
 use App\Models\Country;
 //return type view
 use Illuminate\View\View;
@@ -27,16 +27,16 @@ class shippingCostController extends Controller
 
         //get country
       //  $shippingCosts = shippingCost::all();
-        $modelSippingCosts = new shippingCost;
+        $modelSippingCosts = new Shippingcost;
        $shippingCosts=$modelSippingCosts->getListshippingCosts();
        // $countrys = country::all();
         //render view country
-        return view('shippingcosts.index',["title"=>"Shipping Countrys",'active'=>'Country'],compact('shippingCosts'));
+        return view('ShippingCosts.Index',["title"=>"Shipping Countrys",'active'=>'Country'],compact('shippingCosts'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
         $countrys = country::all();
-        return view('shippingcosts.Create',["title"=>"Create",'active'=>'Country'],compact('countrys'));
+        return view('ShippingCosts.Create',["title"=>"Create",'active'=>'Country'],compact('countrys'));
 
     }
     //pungsi menambahkan data
@@ -68,12 +68,12 @@ class shippingCostController extends Controller
         $shippingCosts=shippingCost::findorFail($id);
 
         //render view with country
-        return view('shippingcosts.show',["title"=>"Show",'active'=>'Country'],compact('shippingCost'));
+        return view('ShippingCosts.Show',["title"=>"Show",'active'=>'Country'],compact('shippingCost'));
     }
 
     public function edit(string $id):View
     {
-        $modelshippingCostsById = new shippingCost;
+        $modelshippingCostsById = new Shippingcost;
         $shippingCosts=$modelshippingCostsById->getListshippingCostsById($id);
 
 
@@ -82,7 +82,7 @@ class shippingCostController extends Controller
 
 
         //var_dump($shippingCosts); exit;
-        return view('shippingcosts.edit',["title"=>"Edit",'active'=>'Country'], compact('shippingCosts'));
+        return view('ShippingCosts.Edit',["title"=>"Edit",'active'=>'Country'], compact('shippingCosts'));
 
     }
 

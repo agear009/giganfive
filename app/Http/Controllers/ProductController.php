@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 //import model product
-use App\Models\product;
+use App\Models\Product;
 use App\Models\CategoryProduct;
 //return type view
 use Illuminate\View\View;
@@ -20,14 +20,14 @@ class ProductController extends Controller
     {
 
         //get product
-        $products = product::all();
+        $products = Product::all();
         //render view product
-        return view('products.index',["title"=>"product",'active'=>'Product'],compact('products'));
+        return view('Products.Index',["title"=>"product",'active'=>'Product'],compact('products'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
         $category_products=CategoryProduct::all();
-        return view('products.Create',["title"=>"Create",'active'=>'Product','category_products'=>$category_products]);
+        return view('Products.Create',["title"=>"Create",'active'=>'Product','category_products'=>$category_products]);
 
     }
     //pungsi menambahkan data
@@ -67,14 +67,14 @@ class ProductController extends Controller
         $product=product::findorFail($id);
 
         //render view with product
-        return view('products.show',["title"=>"Show",'active'=>'Product'],compact('product'));
+        return view('Products.Show',["title"=>"Show",'active'=>'Product'],compact('product'));
     }
 
     public function edit(string $id):View
     {
         //get product by id
         $product=product::findOrFail($id);
-        return view('products.edit',["title"=>"Edit",'active'=>'Product'], compact('product'));
+        return view('Products.Edit',["title"=>"Edit",'active'=>'Product'], compact('product'));
 
     }
 

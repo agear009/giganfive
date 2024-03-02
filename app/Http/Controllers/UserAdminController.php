@@ -18,12 +18,12 @@ class UserAdminController extends Controller
     public function index(){
         $Users=user::all();
 
-        return view('user.index',["title"=>"User","active"=>"User"],compact('Users'));
+        return view('User.Index',["title"=>"User","active"=>"User"],compact('Users'));
     }
 
     public function create(): view {
 
-        return view('user.Create',["title"=>"Create",'active'=>'User']);
+        return view('User.Create',["title"=>"Create",'active'=>'User']);
 
     }
 
@@ -49,7 +49,7 @@ class UserAdminController extends Controller
                ]);
              //  $request->session()->Flash('success','Registration successfull! please Login');
              $Users=user::all();
-               return view('user.index',["title"=>"User","active"=>"User"],compact('Users'))->with('success','Registration successfull! please Login');
+               return view('User.Index',["title"=>"User","active"=>"User"],compact('Users'))->with('success','Registration successfull! please Login');
 
     }
 
@@ -60,14 +60,14 @@ class UserAdminController extends Controller
         $user=user::findorFail($id);
 
         //render view with user
-        return view('user.show',["title"=>"Show",'active'=>'User'],compact('user'));
+        return view('User.Show',["title"=>"Show",'active'=>'User'],compact('user'));
     }
 
     public function edit(string $id):View
     {
         //get user by id
         $user=user::findOrFail($id);
-        return view('user.edit',["title"=>"Edit",'active'=>'User'], compact('user'));
+        return view('User.Edit',["title"=>"Edit",'active'=>'User'], compact('user'));
 
     }
 

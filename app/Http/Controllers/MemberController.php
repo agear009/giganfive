@@ -29,13 +29,13 @@ class memberController extends Controller
         //get member
        // $members = Member::latest()->paginate(5);
         //render view member
-        return view('members.index',["title"=>"Members",'active'=>'Member'],compact('members'));
+        return view('Members.Index',["title"=>"Members",'active'=>'Member'],compact('members'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
         $countries=country::all();
 
-        return view('members.Create',["title"=>"Create",'active'=>'Member','countries'=>$countries]);
+        return view('Members.Create',["title"=>"Create",'active'=>'Member','countries'=>$countries]);
 
     }
     //pungsi menambahkan data
@@ -87,14 +87,14 @@ class memberController extends Controller
         $member=member::findorFail($id);
 
         //render view with member
-        return view('members.show',["title"=>"Show",'active'=>'Member'],compact('member'));
+        return view('Members.Show',["title"=>"Show",'active'=>'Member'],compact('member'));
     }
 
     public function edit(string $id):View
     {
         //get member by id
         $member=member::findOrFail($id);
-        return view('members.edit',["title"=>"Edit",'active'=>'Member'], compact('member'));
+        return view('Members.Edit',["title"=>"Edit",'active'=>'Member'], compact('member'));
 
     }
 

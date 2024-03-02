@@ -24,7 +24,7 @@ class ImageController extends Controller
         $modelimage = new image;
          $Images=$modelimage->getListimages();
         //render view Image
-        return view('images.index',["title"=>"Image",'active'=>'Image'],compact('Images'));
+        return view('Images.Index',["title"=>"Image",'active'=>'Image'],compact('Images'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
@@ -63,7 +63,7 @@ class ImageController extends Controller
         $Image=Image::findorFail($id);
 
         //render view with Image
-        return view('Images.show',["title"=>"Show",'active'=>'Image'],compact('Image'));
+        return view('Images.Show',["title"=>"Show",'active'=>'Image'],compact('Image'));
     }
 
     public function edit(string $id):View
@@ -72,7 +72,7 @@ class ImageController extends Controller
        // $Image=Image::findOrFail($id);
        $modelimagesById = new image;
        $Image=$modelimagesById->getListimagesById($id);
-        return view('Images.edit',["title"=>"Edit",'active'=>'Image'], compact('Image'));
+        return view('Images.Edit',["title"=>"Edit",'active'=>'Image'], compact('Image'));
 
     }
 

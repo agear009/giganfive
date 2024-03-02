@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 //import model category
-use App\Models\category;
+use App\Models\Category;
 //return type view
 use Illuminate\View\View;
 
@@ -23,13 +23,13 @@ class categoryController extends Controller
     {
 
         //get category
-        $categorys = category::latest()->paginate(5);
+        $categorys = Category::all();
         //render view category
-        return view('categorys.index',["title"=>"Category",'active'=>'Category'],compact('categorys'));
+        return view('Categorys.Index',["title"=>"Category",'active'=>'Category'],compact('categorys'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
-        return view('categorys.Create',["title"=>"Create",'active'=>'Category']);
+        return view('Categorys.Create',["title"=>"Create",'active'=>'Category']);
 
     }
     //pungsi menambahkan data
@@ -56,17 +56,17 @@ class categoryController extends Controller
     {
 
         //get pos id
-        $category=category::findorFail($id);
+        $category=Category::findorFail($id);
 
         //render view with category
-        return view('categorys.show',["title"=>"Show",'active'=>'Category'],compact('category'));
+        return view('Categorys.Show',["title"=>"Show",'active'=>'Category'],compact('category'));
     }
 
     public function edit(string $id):View
     {
         //get category by id
-        $category=category::findOrFail($id);
-        return view('categorys.edit',["title"=>"Edit",'active'=>'Category'], compact('category'));
+        $category=Category::findOrFail($id);
+        return view('Categorys.Edit',["title"=>"Edit",'active'=>'Category'], compact('category'));
 
     }
 
@@ -80,7 +80,7 @@ class categoryController extends Controller
             'category' =>'required|min:2|max:255'
         ]);
         //get category by id
-        $category=category::FindOrFail($id);
+        $category=Category::FindOrFail($id);
 
 
             $category->update([
@@ -93,7 +93,7 @@ class categoryController extends Controller
     public function destroy($id): RedirectResponse
     {
         //get category id
-        $category=category::findOrFail($id);
+        $category=Category::findOrFail($id);
 
         //delete image
 

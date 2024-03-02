@@ -64,7 +64,7 @@ class TransactionController extends Controller
             'status' =>$request->status
         ]);
         //redirect to index
-        return Redirect()->route('index.Dashboard',["title"=>"My Order",'active'=>'Myorder'])->with(['success'=>'cart added successfully!']);
+        return Redirect()->route('index.dashboard',["title"=>"My Order",'active'=>'Myorder'])->with(['success'=>'cart added successfully!']);
     }
 
     //function show
@@ -78,7 +78,7 @@ class TransactionController extends Controller
        //$Transaction=Transaction::findorFail($id);
 
         //render view with Transaction
-        return view('Transactions.show',["title"=>"Show",'active'=>'Transaction'],compact('Transaction'));
+        return view('Transactions.Show',["title"=>"Show",'active'=>'Transaction'],compact('Transaction'));
     }
 
     public function edit(string $id):View
@@ -86,7 +86,7 @@ class TransactionController extends Controller
         //get Transaction by id
         $modelgetListthreeTablesById = new transaction;
         $Transaction=$modelgetListthreeTablesById->getListthreeTablesById($id);
-        return view('Transactions.edit',["title"=>"Edit",'active'=>'Transaction'], compact('Transaction'));
+        return view('Transactions.Edit',["title"=>"Edit",'active'=>'Transaction'], compact('Transaction'));
 
     }
 
@@ -138,7 +138,7 @@ class TransactionController extends Controller
             ]);
 
         }
-        return redirect()->route('Transactions.Index',["title"=>"Transaction",'active'=>'Transaction'])->with(['success'=>'data berhasil diubah!']);
+        return redirect()->route('transactions.index',["title"=>"Transaction",'active'=>'Transaction'])->with(['success'=>'data berhasil diubah!']);
 
     }
 
@@ -155,6 +155,6 @@ class TransactionController extends Controller
         $Transaction->delete();
 
         //redirect to index
-        return redirect()->route('Transactions.Index',["title"=>"Transaction",'active'=>'Transaction'])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('transactions.index',["title"=>"Transaction",'active'=>'Transaction'])->with(['success'=>'data telah berhasil di delete!']);
     }
 }

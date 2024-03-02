@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Layouts.Main')
 
 @section('container')
 
@@ -18,7 +18,6 @@
                                         <td>Email</td>
                                         <td>Created at</td>
                                         <td>Menu</td>
-
                                     </thead>
                                     <tbody>
                                     @forelse ($Users as $user)

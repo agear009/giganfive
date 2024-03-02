@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Layouts.Main')
 
 @section('container')
 
@@ -35,13 +35,13 @@
                                         </tr>
                                     @empty
                                         <div class="alert alert-danger">
-                                            Data Post Empty.
+                                            Data Category Product Empty.
                                         </div>
                                     @endforelse
                                     </tbody>
                                 </table>
                         </div>
-                          {{ $categoryproducts->links() }}
+
                     </div>
                 </div>
             </div>

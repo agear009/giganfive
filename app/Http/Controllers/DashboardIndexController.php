@@ -44,7 +44,7 @@ class DashboardIndexController extends Controller
         $User=user::findOrFail(auth()->user()->id);
         //dd($product);
 
-        return view('index.detail',["title"=>"Detail","active"=>"Detail"],compact('product','User'));
+        return view('Index.Detail',["title"=>"Detail","active"=>"Detail"],compact('product','User'));
 
 
     }
@@ -85,7 +85,7 @@ class DashboardIndexController extends Controller
 
         //get product by id
         //$ShoppingCart=ShoppingCart::findOrFail($id);
-        return view('index.edit',["title"=>"Edit",'active'=>'myorder'], compact('ShoppingCart','ShippingCosts'));
+        return view('Index.Edit',["title"=>"Edit",'active'=>'myorder'], compact('ShoppingCart','ShippingCosts'));
 
     }
 

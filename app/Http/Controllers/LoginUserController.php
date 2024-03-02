@@ -9,7 +9,7 @@ class LoginUserController extends Controller
 {
     public function index(){
 
-        return view('login.login',['title'=>'Login','active'=>'login']);
+        return view('Login.Login',['title'=>'Login','active'=>'login']);
 
     }
 

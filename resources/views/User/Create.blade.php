@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Layouts.Main')
 
 @section('container')
 
@@ -13,7 +13,6 @@
                                    <h1 class="h3 mb-3 fw-normal text-center">New User</h1>
                                    <main class="form-signin">
                         <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
-
                             @csrf
 
            <div class="form-floating">

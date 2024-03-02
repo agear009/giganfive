@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Layouts.Main')
 
 @section('container')
 
@@ -39,7 +39,7 @@
                                     </tbody>
                                 </table>
                         </div>
-                          {{ $categorys->links() }}
+                          {{--  {{ $categorys->links() }}  --}}
                     </div>
                 </div>
             </div>

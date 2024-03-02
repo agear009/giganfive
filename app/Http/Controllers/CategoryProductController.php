@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 //import model categoryproduct
-use App\Models\categoryproduct;
+use App\Models\CategoryProduct;
 //return type view
 use Illuminate\View\View;
 
@@ -22,13 +22,13 @@ class categoryproductController extends Controller
     {
 
         //get categoryproduct
-        $categoryproducts = categoryproduct::latest()->paginate(5);
+        $categoryproducts = CategoryProduct::latest()->paginate(5);
         //render view categoryproduct
-        return view('categoryproducts.index',["title"=>"Category",'active'=>'CategoryProduct'],compact('categoryproducts'));
+        return view('CategoryProducts.Index',["title"=>"Category",'active'=>'CategoryProduct'],compact('categoryproducts'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
-        return view('categoryproducts.Create',["title"=>"Create",'active'=>'CategoryProduct']);
+        return view('CategoryProducts.Create',["title"=>"Create",'active'=>'CategoryProduct']);
 
     }
     //pungsi menambahkan data
@@ -41,7 +41,7 @@ class categoryproductController extends Controller
             'name' =>'required|min:2|max:255'
         ]);
 
-        categoryproduct::create([
+        Categoryproduct::create([
 
             'name'=>$request->name
 
@@ -55,17 +55,17 @@ class categoryproductController extends Controller
     {
 
         //get pos id
-        $categoryproduct=categoryproduct::findorFail($id);
+        $categoryproduct=Categoryproduct::findorFail($id);
 
         //render view with categoryproduct
-        return view('categoryproducts.show',["title"=>"Show",'active'=>'CategoryProduct'],compact('categoryproduct'));
+        return view('CategoryProducts.Show',["title"=>"Show",'active'=>'CategoryProduct'],compact('categoryproduct'));
     }
 
     public function edit(string $id):View
     {
         //get categoryproduct by id
         $categoryproduct=categoryproduct::findOrFail($id);
-        return view('categoryproducts.edit',["title"=>"Edit",'active'=>'CategoryProduct'], compact('categoryproduct'));
+        return view('CategoryProducts.Edit',["title"=>"Edit",'active'=>'CategoryProduct'], compact('categoryproduct'));
 
     }
 

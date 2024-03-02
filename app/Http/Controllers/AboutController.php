@@ -26,11 +26,11 @@ class AboutController extends Controller
         //$Abouts = About::latest()->paginate(5);
         $Abouts = About::all();
         //render view About
-        return view('abouts.index',["title"=>"About",'active'=>'About'],compact('Abouts'));
+        return view('Abouts.Index',["title"=>"About",'active'=>'About'],compact('Abouts'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
-        return view('abouts.Create',["title"=>"Create",'active'=>'About']);
+        return view('Abouts.Create',["title"=>"Create",'active'=>'About']);
 
     }
     //pungsi menambahkan data

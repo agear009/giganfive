@@ -26,7 +26,7 @@ class PostController extends Controller
         //get post
         $posts = post::latest()->paginate(5);
         //render view post
-        return view('Posts.index',["title"=>"Post",'active'=>'Post'],compact('posts'));
+        return view('Posts.Index',["title"=>"Post",'active'=>'Post'],compact('posts'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
@@ -69,14 +69,14 @@ class PostController extends Controller
         $post=Post::findorFail($id);
 
         //render view with post
-        return view('posts.show',["title"=>"Show",'active'=>'Post'],compact('post'));
+        return view('Posts.Show',["title"=>"Show",'active'=>'Post'],compact('post'));
     }
 
     public function edit(string $id):View
     {
         //get post by id
         $post=Post::findOrFail($id);
-        return view('posts.edit',["title"=>"Edit",'active'=>'Post'], compact('post'));
+        return view('Posts.Edit',["title"=>"Edit",'active'=>'Post'], compact('post'));
 
     }
 

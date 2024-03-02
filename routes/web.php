@@ -24,16 +24,17 @@ Route::get('/', function () {
             $Categorys = Category::all();
             $Products = Product::all();
             $Abouts = About::all();
-            return view('index.index',["title"=>"home","active"=>"index"],compact('Categoryproducts','Products','Abouts','Categorys','Posts'));
+            return view('Index.Index',["title"=>"home","active"=>"index"],compact('Categoryproducts','Products','Abouts','Categorys','Posts'));
         })->name('login')->middleware('guest');
 
 Route::get('/logingiganfive', function () {
-            return view('login.index',["title"=>"home","active"=>"index"]);
+            return view('Login.Index',["title"=>"home","active"=>"index"]);
         })->name('login')->middleware('guest');
 
 Route::get('/loginuser', function () {
-            return view('login.login',["title"=>"home","active"=>"login"]);
+            return view('Login.Login',["title"=>"home","active"=>"login"]);
             })->name('login')->middleware('guest');
+
 
 
 Route::post('/login',  [LoginController::class,'autenticate']);

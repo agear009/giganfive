@@ -27,11 +27,11 @@ class countryController extends Controller
         //$countrys = country::latest()->paginate(5);
         $countrys = country::all();
         //render view country
-        return view('countrys.index',["title"=>"Country",'active'=>'Country'],compact('countrys'));
+        return view('Countrys.Index',["title"=>"Country",'active'=>'Country'],compact('countrys'));
     }
     // untuk menampilkan form tambah data
     public function create(): view {
-        return view('countrys.Create',["title"=>"Create",'active'=>'Country']);
+        return view('Countrys.Create',["title"=>"Create",'active'=>'Country']);
 
     }
     //pungsi menambahkan data
@@ -61,14 +61,14 @@ class countryController extends Controller
         $country=country::findorFail($id);
 
         //render view with country
-        return view('countrys.show',["title"=>"Show",'active'=>'Country'],compact('country'));
+        return view('Countrys.Show',["title"=>"Show",'active'=>'Country'],compact('country'));
     }
 
     public function edit(string $id):View
     {
         //get country by id
         $country=country::findOrFail($id);
-        return view('countrys.edit',["title"=>"Edit",'active'=>'Country'], compact('country'));
+        return view('Countrys.Edit',["title"=>"Edit",'active'=>'Country'], compact('country'));
 
     }
 

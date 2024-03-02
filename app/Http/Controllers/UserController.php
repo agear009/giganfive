@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     //["title"=>"Register","active"=>"index"]
     public function index(){
-        return view('register.create',["title"=>"Register","active"=>"index"]);
+        return view('Register.Create',["title"=>"Register","active"=>"index"]);
     }
 
     public function store(request $request){
